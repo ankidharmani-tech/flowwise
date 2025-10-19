@@ -1,86 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Traffic Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <title>FlowWise | Smarter Mumbai Traffic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
 
-<body class="transition-all duration-300 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-all duration-500">
 
-  <!-- ✅ Navbar -->
-  <nav class="fixed w-full z-20 top-0 left-0 bg-black/70 backdrop-blur-md text-white dark:bg-gray-900/90 shadow-lg">
-    <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-      <h1 class="text-2xl font-bold tracking-wide">TrafficFlow</h1>
-      <div class="space-x-6">
-        <button id="theme-toggle" class="px-3 py-1.5 rounded-lg bg-white/20 hover:bg-white/30 dark:bg-gray-700 dark:hover:bg-gray-600 transition">
-          🌙 / ☀️
-        </button>
-        <button id="alertsBtn" class="px-4 py-1.5 bg-red-500 hover:bg-red-600 text-white rounded-lg transition">
-          Alerts
-        </button>
-      </div>
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-8 py-4 bg-black/50 backdrop-blur-md fixed top-0 left-0 w-full z-20">
+    <div class="flex items-center space-x-3">
+      <img src="assets/logo.png" alt="FlowWise Logo" class="w-10 h-10">
+      <span class="text-xl font-semibold">FlowWise</span>
+    </div>
+    <ul class="flex space-x-6">
+      <li><a href="#" class="hover:text-green-400">Home</a></li>
+      <li><a href="#" class="hover:text-green-400">About</a></li>
+      <li><a href="#" class="hover:text-green-400">Contact</a></li>
+    </ul>
+    <div class="flex items-center space-x-3">
+      <button id="theme-toggle" class="ml-3 text-xl">🌙</button>
     </div>
   </nav>
 
-  <!-- ✅ Carousel -->
-  <section class="relative h-[90vh] overflow-hidden">
-    <div class="absolute inset-0 bg-black/40 z-10"></div>
-    <img src="https://images.unsplash.com/photo-1517999349370-87f96b2ecf1e" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" />
-    <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+  <!-- Hero Section -->
+  <section class="relative flex flex-col md:flex-row items-center justify-between pt-28 px-8 h-[90vh] overflow-hidden">
+    <div class="md:w-1/2 space-y-6 z-10">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-blue-600 dark:text-blue-400">FlowWise</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-md">We can’t stop traffic, but we can outsmart it.</p>
+      <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">🚦 View Traffic</button>
+    </div>
 
-    <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-20">
-      <h1 class="text-5xl md:text-6xl font-bold drop-shadow-lg mb-4">
-        Smarter Traffic, Smoother Mumbai
-      </h1>
-      <p class="text-lg md:text-xl text-gray-200 drop-shadow">
-        Predict congestion before it happens.
-      </p>
+    <!-- Background Carousel -->
+    <div id="carousel" class="absolute inset-0 -z-10">
+      <img src="assets/carousel/mumbai1.jpg" class="carousel-img opacity-100 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
+      <img src="assets/carousel/mumbai2.jpg" class="carousel-img opacity-0 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
+      <img src="assets/carousel/mumbai3.jpg" class="carousel-img opacity-0 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
     </div>
   </section>
 
-  <!-- ✅ Controls -->
-  <section class="max-w-5xl mx-auto py-10 px-6 text-center">
-    <label for="areaSearch" class="block font-semibold mb-2 text-lg">Select Area:</label>
-    <select id="areaSearch" class="px-4 py-2 border rounded-lg dark:bg-gray-800">
-      <option value="">-- Choose Area --</option>
-      <option value="Andheri">Andheri</option>
-      <option value="Bandra">Bandra</option>
-      <option value="Dadar">Dadar</option>
-      <option value="Sion">Sion</option>
-      <option value="Powai">Powai</option>
-      <option value="Malad">Malad</option>
-    </select>
+  <!-- Control Bar -->
+  <div class="sticky top-0 z-30 flex flex-wrap justify-center items-center gap-4 bg-white/80 dark:bg-gray-800/70 backdrop-blur-md py-3 px-4 shadow-md">
+    <div class="flex items-center space-x-2">
+      <span>🔍</span>
+      <input id="areaSearch" type="text" placeholder="Search Area..." class="px-2 py-1 border rounded-md dark:bg-gray-700 dark:border-gray-600">
+    </div>
+    <div class="flex items-center space-x-2">
+      <span>🕒</span>
+      <select id="timeForecast" class="px-2 py-1 border rounded-md dark:bg-gray-700 dark:border-gray-600">
+        <option value="0">Now</option>
+        <option value="15">+15 min</option>
+        <option value="30">+30 min</option>
+      </select>
+    </div>
+    <div class="flex items-center space-x-2">
+      <span>🚗</span>
+      <select id="vehicleFilter" class="px-2 py-1 border rounded-md dark:bg-gray-700 dark:border-gray-600">
+        <option>All</option>
+        <option>Public</option>
+        <option>Emergency</option>
+        <option>Heavy</option>
+        <option>2W</option>
+      </select>
+    </div>
+    <button id="alertsBtn" class="relative bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md">🔔
+      <span id="alertCount" class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full text-xs px-1">3</span>
+    </button>
+  </div>
 
-    <label for="timeForecast" class="block font-semibold mt-6 mb-2 text-lg">
-      Forecast (hours ahead):
-    </label>
-    <input id="timeForecast" type="number" min="0" max="5" value="1"
-      class="px-3 py-2 border rounded-lg dark:bg-gray-800 w-24 text-center" />
-
-    <div id="forecastData" class="mt-6 text-xl font-medium"></div>
-  </section>
-
-  <!-- ✅ Live Data -->
-  <section class="max-w-6xl mx-auto px-6">
-    <div id="map" class="w-full h-[500px] rounded-xl shadow-lg"></div>
-
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-lg mb-2">Area</h3>
-        <p id="selectedArea" class="text-xl font-semibold">-</p>
-      </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-lg mb-2">Congestion</h3>
-        <p id="congestionLevel" class="text-xl font-semibold">-</p>
-      </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-lg mb-2">Avg Speed (km/h)</h3>
-        <p id="avgSpeed" class="text-xl font-semibold">-</p>
+  <!-- Live Insights Section -->
+  <section class="flex flex-col md:flex-row px-6 py-8 gap-6">
+    <div id="map" class="w-full md:w-3/5 h-[60vh] rounded-2xl shadow-lg"></div>
+    <div class="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 space-y-4">
+      <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400">Live Insights</h2>
+      <div id="insights" class="space-y-2 text-sm">
+        <p>📍 Selected Area: <span id="selectedArea">None</span></p>
+        <p>🚦 Congestion Level: <span id="congestionLevel">—</span></p>
+        <p>⚡ Avg Speed: <span id="avgSpeed">—</span> km/h</p>
+        <p>📈 Forecast: <span id="forecastData">—</span></p>
       </div>
     </div>
   </section>
@@ -88,6 +89,5 @@
   <script src="script.js"></script>
 </body>
 </html>
-
 
 
