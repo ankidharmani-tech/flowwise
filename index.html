@@ -8,28 +8,26 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
+
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-all duration-500">
 
-  <!-- ✅ Navbar -->
-  <nav class="flex items-center justify-between px-6 py-4 bg-white/70 dark:bg-gray-800/60 backdrop-blur-md fixed top-0 w-full z-20 shadow-md">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-8 py-4 bg-black/50 backdrop-blur-md fixed top-0 left-0 w-full z-20">
     <div class="flex items-center space-x-3">
-      <img src="assets/logo.png" alt="FlowWise Logo" class="h-10" />
-
-      <h1 class="font-bold text-xl text-blue-600 dark:text-blue-400">FlowWise</h1>
+      <img src="assets/logo.png" alt="FlowWise Logo" class="w-10 h-10">
+      <span class="text-xl font-semibold">FlowWise</span>
     </div>
-    <div class="hidden md:flex space-x-6 font-medium">
-      <a href="#" class="hover:text-blue-600">Home</a>
-      <a href="#" class="hover:text-blue-600">About</a>
-      <a href="#" class="hover:text-blue-600">Contact</a>
-    </div>
+    <ul class="flex space-x-6">
+      <li><a href="#" class="hover:text-green-400">Home</a></li>
+      <li><a href="#" class="hover:text-green-400">About</a></li>
+      <li><a href="#" class="hover:text-green-400">Contact</a></li>
+    </ul>
     <div class="flex items-center space-x-3">
-      <button id="toggleDark" class="px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700">🌞</button>
-      <button class="bg-blue-600 text-white px-4 py-1 rounded-md hover:bg-blue-700">Login</button>
-      <button class="border border-blue-600 text-blue-600 px-4 py-1 rounded-md hover:bg-blue-600 hover:text-white">Sign Up</button>
+      <button id="theme-toggle" class="ml-3 text-xl">🌙</button>
     </div>
   </nav>
 
-  <!-- ✅ Hero Section -->
+  <!-- Hero Section -->
   <section class="relative flex flex-col md:flex-row items-center justify-between pt-28 px-8 h-[90vh] overflow-hidden">
     <div class="md:w-1/2 space-y-6 z-10">
       <h1 class="text-5xl md:text-6xl font-extrabold text-blue-600 dark:text-blue-400">FlowWise</h1>
@@ -38,10 +36,14 @@
     </div>
 
     <!-- Background Carousel -->
-    <div id="carousel" class="absolute inset-0 -z-10 opacity-80 blur-sm transition-all duration-700"></div>
+    <div id="carousel" class="absolute inset-0 -z-10">
+      <img src="assets/carousel/mumbai1.jpg" class="carousel-img opacity-100 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
+      <img src="assets/carousel/mumbai2.jpg" class="carousel-img opacity-0 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
+      <img src="assets/carousel/mumbai3.jpg" class="carousel-img opacity-0 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
+    </div>
   </section>
 
-  <!-- ✅ Control Bar -->
+  <!-- Control Bar -->
   <div class="sticky top-0 z-30 flex flex-wrap justify-center items-center gap-4 bg-white/80 dark:bg-gray-800/70 backdrop-blur-md py-3 px-4 shadow-md">
     <div class="flex items-center space-x-2">
       <span>🔍</span>
@@ -50,9 +52,9 @@
     <div class="flex items-center space-x-2">
       <span>🕒</span>
       <select id="timeForecast" class="px-2 py-1 border rounded-md dark:bg-gray-700 dark:border-gray-600">
-        <option>Now</option>
-        <option>+15 min</option>
-        <option>+30 min</option>
+        <option value="0">Now</option>
+        <option value="15">+15 min</option>
+        <option value="30">+30 min</option>
       </select>
     </div>
     <div class="flex items-center space-x-2">
@@ -65,16 +67,14 @@
         <option>2W</option>
       </select>
     </div>
-    <button id="modeToggle" class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md">🗺️ Map View</button>
-    <button id="alertsBtn" class="relative bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md">🔔<span id="alertCount" class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full text-xs px-1">3</span></button>
+    <button id="alertsBtn" class="relative bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md">🔔
+      <span id="alertCount" class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full text-xs px-1">3</span>
+    </button>
   </div>
 
-  <!-- ✅ Live Insights Section -->
+  <!-- Live Insights Section -->
   <section class="flex flex-col md:flex-row px-6 py-8 gap-6">
-    <!-- Map -->
     <div id="map" class="w-full md:w-3/5 h-[60vh] rounded-2xl shadow-lg"></div>
-
-    <!-- Insights Panel -->
     <div class="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 space-y-4">
       <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400">Live Insights</h2>
       <div id="insights" class="space-y-2 text-sm">
@@ -89,3 +89,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
