@@ -11,37 +11,40 @@
 
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-all duration-500">
 
-  <!-- Navbar -->
-  <nav class="flex justify-between items-center px-8 py-4 bg-black/50 backdrop-blur-md fixed top-0 left-0 w-full z-20">
-    <div class="flex items-center space-x-3">
-      <img src="assets/logo.png" alt="FlowWise Logo" class="w-10 h-10">
-      <span class="text-xl font-semibold">FlowWise</span>
-    </div>
-    <ul class="flex space-x-6">
-      <li><a href="#" class="hover:text-green-400">Home</a></li>
-      <li><a href="#" class="hover:text-green-400">About</a></li>
-      <li><a href="#" class="hover:text-green-400">Contact</a></li>
-    </ul>
-    <div class="flex items-center space-x-3">
-      <button id="theme-toggle" class="ml-3 text-xl">🌙</button>
-    </div>
-  </nav>
+<!--  Navbar -->
+<nav class="flex justify-between items-center px-8 py-4 bg-black/50 backdrop-blur-md fixed top-0 left-0 w-full z-20 text-white">
+  <div class="flex items-center space-x-3">
+    <img src="assets/logo.png" alt="FlowWise Logo" class="w-10 h-10">
+    <span class="text-xl font-semibold">FlowWise</span>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="relative flex flex-col md:flex-row items-center justify-between pt-28 px-8 h-[90vh] overflow-hidden">
-    <div class="md:w-1/2 space-y-6 z-10">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-blue-600 dark:text-blue-400">FlowWise</h1>
-      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-md">We can’t stop traffic, but we can outsmart it.</p>
-      <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">🚦 View Traffic</button>
-    </div>
+  <ul class="flex space-x-6">
+    <li><a href="#" class="hover:text-green-400 transition">Home</a></li>
+    <li><a href="#" class="hover:text-green-400 transition">About</a></li>
+    <li><a href="#" class="hover:text-green-400 transition">Contact</a></li>
+  </ul>
 
-    <!-- Background Carousel -->
-    <div id="carousel" class="absolute inset-0 -z-10">
-      <img src="assets/carousel/mumbai1.jpg" class="carousel-img opacity-100 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
-      <img src="assets/carousel/mumbai2.jpg" class="carousel-img opacity-0 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
-      <img src="assets/carousel/mumbai3.jpg" class="carousel-img opacity-0 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
-    </div>
-  </section>
+  <div class="flex items-center space-x-3">
+    <button id="theme-toggle" class="ml-3 text-xl">🌙</button>
+  </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="relative flex flex-col md:flex-row items-center justify-between pt-28 px-8 h-[90vh] overflow-hidden">
+  <div class="md:w-1/2 space-y-6 z-10">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-blue-600 dark:text-blue-400">FlowWise</h1>
+    <p class="text-lg text-white max-w-md">We can’t stop traffic, but we can outsmart it.</p>
+    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">🚦 View Traffic</button>
+  </div>
+
+  <!-- Background Carousel -->
+  <div id="carousel" class="absolute inset-0 -z-10">
+    <img src="assets/carousel/mumbai1.jpg" class="carousel-img opacity-100 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
+    <img src="assets/carousel/mumbai2.jpg" class="carousel-img opacity-0 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
+    <img src="assets/carousel/mumbai3.jpg" class="carousel-img opacity-0 transition-opacity duration-1000 ease-in-out absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50" />
+  </div>
+</section>
 
   <!-- Control Bar -->
   <div class="sticky top-0 z-30 flex flex-wrap justify-center items-center gap-4 bg-white/80 dark:bg-gray-800/70 backdrop-blur-md py-3 px-4 shadow-md">
