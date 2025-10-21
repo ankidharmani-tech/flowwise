@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flowise</title>
+    <title> FloWise | Smart Mumbai Smarter Mumbaiker</title>
     <link rel="icon" type="image/svg+xml" href="assets/favcon.svg">
 </head>
 <body>
@@ -18,7 +18,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+    <!-- google fontfamily -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
+    <!-- leaflet map  -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+     <!-- leaflet map -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+
 <body>
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
@@ -58,8 +70,11 @@
       </div>
       
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler border" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <svg class="w-5 h-5 navbar-toggler-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="whitesmoke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav mx-auto fw-medium">
@@ -91,10 +106,10 @@
     <div class="carousel-overlay"></div>
     <div class="carousel-inner ">
         <div class="carousel-item active">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=900&fit=crop" alt="Mountain landscape">
+            <img src="https://images.unsplash.com/photo-1629652320041-c2c555e68101?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332" alt="Mountain landscape">
         </div>
         <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&h=900&fit=crop" alt="Nature scene">
+            <img src="https://images.unsplash.com/photo-1641122098360-13e4442bb539?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074" alt="Nature scene">
         </div>
         <div class="carousel-item">
             <img src="https://images.unsplash.com/photo-1511576661531-b34d7da5d0bb?w=1600&h=900&fit=crop" alt="Sunset view">
@@ -102,17 +117,32 @@
     </div>
 
     <div class="hero-content">
-        <h1 class="hero-title" id="heroTitle">FlowWise</h1>
+        <h1 class="hero-title" id="heroTitle"><span class="sizef">F</span>LOWISE</h1>
         <p class="hero-subtitle" id="heroSubtitle">We can’t stop traffic, but we can outsmart it.</p>
-        <button class="hero-button btn "><svg height="25px" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 496.162 496.162" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#337180;" d="M248.077,0C111.072,0,0.002,111.062,0.002,248.083c0,137.005,111.07,248.079,248.075,248.079 c137.013,0,248.083-111.074,248.083-248.079C496.16,111.062,385.09,0,248.077,0z"></path> <path style="fill:#D3D3D3;" d="M229.787,246.881v248.608c6.041,0.44,12.139,0.673,18.29,0.673c5.371,0,10.696-0.19,15.983-0.527 V246.881H229.787z"></path> <path style="fill:#EAEAEA;" d="M229.787,246.881v248.608c6.041,0.44,12.139,0.673,18.29,0.673V246.881H229.787z"></path> <path style="fill:#E5E5E5;" d="M248.081,32.082c-52.079,0-94.304,24.952-94.304,55.732v253.533c0,30.78,42.225,55.732,94.304,55.732 s94.304-24.952,94.304-55.732V87.814C342.385,57.034,300.16,32.082,248.081,32.082z"></path> <path style="fill:#3B3B3B;" d="M248.081,42.082c-45.05,0-81.575,23.585-81.575,52.679v239.64c0,29.094,36.525,52.679,81.575,52.679 s81.575-23.585,81.575-52.679V94.761C329.656,65.667,293.131,42.082,248.081,42.082z"></path> <circle style="fill:#EA4949;" cx="248.081" cy="116.581" r="43"></circle> <path style="fill:#F25F5F;" d="M274.486,90.175c-14.583-14.583-38.228-14.583-52.811,0c-14.584,14.583-14.584,38.228,0,52.812 C236.259,157.57,289.07,104.759,274.486,90.175z"></path> <circle style="fill:#2BBF60;" cx="248.081" cy="317.081" r="43"></circle> <circle style="fill:#EAB42D;" cx="248.081" cy="217.081" r="43"></circle> <path style="fill:#EDCB3B;" d="M274.486,191.175c-14.583-14.583-38.228-14.583-52.811,0c-14.584,14.583-14.584,38.228,0,52.812 C236.259,258.57,289.07,205.759,274.486,191.175z"></path> <path style="fill:#3CCE6C;" d="M274.486,291.175c-14.583-14.583-38.228-14.583-52.811,0c-14.584,14.583-14.584,38.228,0,52.812 C236.259,358.57,289.07,305.759,274.486,291.175z"></path> </g></svg>FLOW NOW</button>
+        <button class="hero-button btn ">
+          <svg height="25px" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 496.162 496.162" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#337180;" d="M248.077,0C111.072,0,0.002,111.062,0.002,248.083c0,137.005,111.07,248.079,248.075,248.079 c137.013,0,248.083-111.074,248.083-248.079C496.16,111.062,385.09,0,248.077,0z"></path> <path style="fill:#D3D3D3;" d="M229.787,246.881v248.608c6.041,0.44,12.139,0.673,18.29,0.673c5.371,0,10.696-0.19,15.983-0.527 V246.881H229.787z"></path>
+             <path style="fill:#EAEAEA;" d="M229.787,246.881v248.608c6.041,0.44,12.139,0.673,18.29,0.673V246.881H229.787z"></path>
+              <path style="fill:#E5E5E5;" d="M248.081,32.082c-52.079,0-94.304,24.952-94.304,55.732v253.533c0,30.78,42.225,55.732,94.304,55.732 s94.304-24.952,94.304-55.732V87.814C342.385,57.034,300.16,32.082,248.081,32.082z"></path>
+               <path style="fill:#3B3B3B;" d="M248.081,42.082c-45.05,0-81.575,23.585-81.575,52.679v239.64c0,29.094,36.525,52.679,81.575,52.679 s81.575-23.585,81.575-52.679V94.761C329.656,65.667,293.131,42.082,248.081,42.082z"></path> 
+               <circle style="fill:#EA4949;" cx="248.081" cy="116.581" r="43"></circle> 
+               <path style="fill:#F25F5F;" d="M274.486,90.175c-14.583-14.583-38.228-14.583-52.811,0c-14.584,14.583-14.584,38.228,0,52.812 C236.259,157.57,289.07,104.759,274.486,90.175z"></path> 
+               <circle style="fill:#2BBF60;" cx="248.081" cy="317.081" r="43"></circle> 
+               <circle style="fill:#EAB42D;" cx="248.081" cy="217.081" r="43"></circle>
+                <path style="fill:#EDCB3B;" d="M274.486,191.175c-14.583-14.583-38.228-14.583-52.811,0c-14.584,14.583-14.584,38.228,0,52.812 C236.259,258.57,289.07,205.759,274.486,191.175z"></path> 
+                <path style="fill:#3CCE6C;" d="M274.486,291.175c-14.583-14.583-38.228-14.583-52.811,0c-14.584,14.583-14.584,38.228,0,52.812 C236.259,358.57,289.07,305.759,274.486,291.175z"></path>
+               </g>
+          </svg>FLOW NOW</button>
            </div>
 </div>
 
 <!-- control bar -->
 
 <section class="control-bar" >
+  
 <div class="container-fluid" >
+  
   <div class="search-bar-container">
+    <h2 class="text-center control-title">Control Uday Control</h2>
  <div class="row g-3 bar" >
 
   <div class="col-auto">
@@ -121,7 +151,7 @@
     </div>
   </div>
       <!-- location finder input -->
-  <div class="col-12 col-sm col-md-4 col-lg-5">
+  <div class="col-12 col-sm col-md-4 col-lg-4">
                     <div class="search-input-wrapper">
                         <input 
                             type="text" 
@@ -136,15 +166,15 @@
   </div>
       <!-- time selector -->
       
- <div class="col-6 col-sm-auto col-md-2 col-lg-2">
-                    <select class="custom-select">
-                        <option value="now" selected>Now</option>
-                        <option value="today">Today</option>
-                        <option value="tomorrow">Tomorrow</option>
-                        <option value="this-week">This Week</option>
-                        <option value="custom">Custom</option>
-                    </select>
-                </div>
+ <div class="col-6 col-sm-auto col-md-2 col-lg-3">
+            <select class="custom-select">
+             <option value="now" selected>Now</option>
+             <option value="today">Today</option>
+             <option value="tomorrow">Tomorrow</option>
+             <option value="this-week">This Week</option>
+             <option value="custom">Custom</option>
+         </select>
+  </div>
 
       <!-- category selector -->
 <div class="col-6 col-sm-auto col-md-2 col-lg-2">
@@ -177,8 +207,9 @@
              <!-- maps section -->
         <div class="container"  style=" margin-top: 39px;">
             <div class="row g-3">
-                <div class="col-lg-8 col-sm-6  col-md-7 border col-sm-auto" style="background-color: #2BBF60;">
-                    <h2 style="color: white;">Map Section Placeholder</h2>
+                <div class="col-lg-7 col-sm-6  col-md-7 border col-sm-auto map-holder">
+                    <div id="map"></div>
+                    <div id="routeInfo"></div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-sm-5 border ">
                     <h2 style="color: white;">Additional Content Placeholder</h2>
@@ -187,6 +218,9 @@
        
 
     </div>
+    </div>
+    </div>
+
 </section>
 
 
@@ -228,6 +262,16 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+<!-- map -->
+<script>
+  const map = L.map('map').setView([19.0760, 72.8777], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+</script>
+
 <!-- Navbar scroll effect -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {

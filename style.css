@@ -1,5 +1,9 @@
+
+
+
+
 body{
-  background-color: #4a9eff;
+  background-color:#024059;
 }
 
 .dark-mode {
@@ -9,15 +13,24 @@ body{
 
 
 #mainNav {
-  background: rgba(255, 255, 255, 0.95);
+  background: #1b5369;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+ /* From https://css.glass */
+
+
   transition: all 0.3s ease;
 }
 
 #mainNav.scrolled {
-  background: rgba(255, 255, 255, 0.408);
+ background: #1b53699a;
+border-radius: 5px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(43, 68, 96, 0.13);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -42,29 +55,32 @@ body{
 
 /* Nav Links */
 .navbar-nav .nav-link {
-  color: var(--text-gray);
+  color: white;
   font-weight: 500;
   font-size: large;
   transition: color 0.3s;
+  font-family: "Playfair Display", serif;
 }
 
 .navbar-nav .nav-link:hover {
-  color: var(--primary-color);
+  color:#b0b0b0;
 }
 
 /* Navbar Buttons */
 .btn-sign-in {
   background: transparent;
-  color: var(--text-dark);
+  color: white;
   border: none;
   padding: 0.6rem 1.5rem;
   border-radius: 8px;
   transition: all 0.3s;
+ 
 }
 
 .btn-sign-in:hover {
   background: rgba(59, 171, 246, 0.144);
-  color: var(--primary-color);
+  color:#b0b0b0;
+   border: 0.5px white solid;
 }
 
 .btn-get-started {
@@ -81,6 +97,7 @@ body{
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2);
 }
+
 
 /* Theme toggle button */
 .switch {
@@ -122,7 +139,7 @@ body{
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2b2b2b;
 }
 
 input:focus + .slider {
@@ -146,11 +163,13 @@ input:checked + .slider:before {
 /* Mobile Responsive Styles */
 @media (max-width: 991px) {
   .navbar-collapse {
-    background: rgba(255, 255, 255, 0.98);
+    /* background: rgba(255, 255, 255, 0.98); */
+    background: #34667a;
     padding: 1rem;
+    padding-bottom: 12px;
     margin-top: 1rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
   }
   
   .navbar-nav {
@@ -175,7 +194,7 @@ input:checked + .slider:before {
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 0 0.25rem rgb(255, 255, 255);
 }
 /* darkmode */
 
@@ -185,7 +204,7 @@ input:checked + .slider:before {
 
 /* hero section */
 .hero-carousel {
-            height: 100vh;
+            height: 80vh;
             position: relative;
         }
 
@@ -195,7 +214,7 @@ input:checked + .slider:before {
 
         .carousel-item img {
             width: 100%;
-            height: 100%;
+            height: 80vh;
             object-fit: cover;
         }
 
@@ -205,7 +224,9 @@ input:checked + .slider:before {
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
+            background-color: rgba(255, 255, 255, 0.178);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px);
             z-index: 1;
         }
 
@@ -222,17 +243,26 @@ input:checked + .slider:before {
         }
 
         .hero-title {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            font-size: 3rem;
+            font-family: "BBH Sans Bartle", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+            color: #fcd891;
+            margin-bottom: 1.75rem;
+            text-shadow: 13px 11px 11px rgba(0, 0, 0, 0.734);
+            letter-spacing: 5px;
             animation: fadeInUp 1s ease-out;
         }
-
+        .sizef{
+          font-size: 5.50rem;
+        }
+        
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 2rem;
+            margin-top: 1.75rem;
             opacity: 0.95;
+            color:black;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
             animation: fadeInUp 1s ease-out 0.2s both;
         }
@@ -242,11 +272,13 @@ input:checked + .slider:before {
             font-size: 1.2rem;
             font-weight: 600;
             border-radius: 10px;
-            background: white;
+            background: #f0ebd8;
             color: #333;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            margin-bottom: 0px;
+            margin-top: 25px;
+            /* transition: all 0.3s ease; */
             animation: fadeInUp 1s ease-out 0.4s both;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             
@@ -258,8 +290,9 @@ input:checked + .slider:before {
         }
         
         .hero-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            color: red;
+            background-color: #fffca2c6;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.666);
         }
 
         @keyframes fadeInUp {
@@ -300,8 +333,12 @@ input:checked + .slider:before {
 
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 1.5rem;
+                text-shadow: 6px 8px 8px rgba(0, 0, 0, 0.734);
             }
+            .sizef{
+          font-size: 3rem;
+        }
             .hero-subtitle {
                 font-size: 1.2rem;
             }
@@ -318,10 +355,22 @@ input:checked + .slider:before {
             justify-content: center;
             margin: 35px 0px 35px 0px;
         }
+        .control-title{
+          color: white;
+            padding-top :15px;
+            padding-bottom: 25px;
+            font-family: "BBH Sans Bartle", sans-serif;
+            font-weight:300;
+            letter-spacing: 2px;
+            line-height: 1.6;
+        }
 .bar{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border-radius: 50px;
+    background: #34667a;
+    padding-bottom: 15px;
 }
         .search-bar-container {
             background: rgba(30, 42, 56, 0.95);
@@ -472,6 +521,20 @@ input:checked + .slider:before {
             font-weight: bold;
             border: 2px solid rgba(30, 42, 56, 0.95);
         }
+
+          .map-holder{
+            margin-right: 10px;
+            /* background-color: whitesmoke; */
+          }
+
+          #map { 
+           height: 420px;
+          border-radius: 8px;
+           margin-top: 10px;
+           margin-bottom:10px; 
+          }
+
+
 
         /* Responsive adjustments */
         @media (max-width: 767px) {
