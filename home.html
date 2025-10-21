@@ -92,10 +92,12 @@
       <div class="d-flex align-items-center flex-column flex-lg-row gap-2 mt-3 mt-lg-0">
         <button class="btn btn-sign-in fw-semibold" type="button">Sign In</button>
         <button class="btn btn-get-started fw-semibold" type="button">Get Started</button>
-        <label class="switch ms-lg-2">
-          <input type="checkbox" id="themeToggle" >
-          <span class="slider round"></span>
-        </label>
+        <!-- theme toggle icon -->
+        <div class="theme-toggle ms-lg-3" id="themeToggleBtn">
+        <i class="fas fa-sun sun-icon"></i>
+        <i class="fas fa-moon moon-icon d-none"></i>
+</div>
+
       </div>
     </div>
   </div>
@@ -330,6 +332,33 @@ function myFunction() {
             alert('You have 3 new notifications!');
         });
     </script>
+<script>
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const sunIcon = themeToggleBtn.querySelector('.sun-icon');
+  const moonIcon = themeToggleBtn.querySelector('.moon-icon');
+
+  // Check saved mode on load
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    sunIcon.classList.add('d-none');
+    moonIcon.classList.remove('d-none');
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+
+    if (isDark) {
+      sunIcon.classList.add('d-none');
+      moonIcon.classList.remove('d-none');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      sunIcon.classList.remove('d-none');
+      moonIcon.classList.add('d-none');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
 
 
 
