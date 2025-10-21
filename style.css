@@ -372,15 +372,14 @@ input:checked + .slider:before {
     background: #34667a;
     padding-bottom: 15px;
 }
-        .search-bar-container {
-            background: rgba(30, 42, 56, 0.95);
-            border-radius: 12px;
-            padding: 15px 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            width: 100%;
-            /* max-width: 1400px; */
-        }
+.search-bar-container {
+ Background: rgba(30, 42, 56, 0.95);
+ border-radius: 12px;
+ padding: 15px 20px;
+ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+ backdrop-filter: blur(10px);
+ width: 100%;
+  }
 
         /* Location Icon */
         .location-icon {
@@ -401,7 +400,7 @@ input:checked + .slider:before {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 8px;
-            color: #ffffff;
+            color: #040404;
             padding: 10px 45px 10px 15px;
             width: 100%;
             transition: all 0.3s ease;
@@ -411,7 +410,7 @@ input:checked + .slider:before {
         .search-input:focus {
             background: rgba(255, 255, 255, 0.15);
             border-color: #4a9eff;
-            color: #ffffff;
+            color: #040404;
             outline: none;
             box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.2);
         }
