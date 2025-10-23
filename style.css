@@ -1,4 +1,4 @@
-
+can u check 
 
 
 /* testing range */
@@ -990,32 +990,24 @@ footer ul li a:hover {
     width: 38px;
   }
 }
-
-#routeInfo h4,
-#routeInfo p {
+/* Fix title overflow in Additional Content section */
+.additional-card h2 {
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
+  text-align: center;
 }
 
-#routeInfo {
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.map-holder,
-.additional-card {
-  height: auto;
-  min-height: auto;
-}
-
-
+/* Scale down title size on smaller screens */
 @media (max-width: 768px) {
-  #routeInfo h4 {
-    font-size: 1rem;
+  .additional-card h2 {
+    font-size: 1.25rem; /* smaller for tablets */
   }
-  #routeInfo p {
-    font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .additional-card h2 {
+    font-size: 1rem; /* smaller for phones */
+    line-height: 1.3;
   }
 }
