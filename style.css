@@ -990,24 +990,3 @@ footer ul li a:hover {
     width: 38px;
   }
 }
-/* Fix title overflow in Additional Content section */
-.additional-card h2 {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  text-align: center;
-}
-
-/* Scale down title size on smaller screens */
-@media (max-width: 768px) {
-  .additional-card h2 {
-    font-size: 1.25rem; /* smaller for tablets */
-  }
-}
-
-@media (max-width: 576px) {
-  .additional-card h2 {
-    font-size: 1rem; /* smaller for phones */
-    line-height: 1.3;
-  }
-}
