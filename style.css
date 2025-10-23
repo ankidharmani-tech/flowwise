@@ -990,3 +990,32 @@ footer ul li a:hover {
     width: 38px;
   }
 }
+
+#routeInfo h4,
+#routeInfo p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+#routeInfo {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.map-holder,
+.additional-card {
+  height: auto;
+  min-height: auto;
+}
+
+
+@media (max-width: 768px) {
+  #routeInfo h4 {
+    font-size: 1rem;
+  }
+  #routeInfo p {
+    font-size: 0.9rem;
+  }
+}
