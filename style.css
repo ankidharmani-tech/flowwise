@@ -922,6 +922,10 @@ footer ul li a:hover {
   .additional-card h2 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: center
   }
   
   .card-content {
