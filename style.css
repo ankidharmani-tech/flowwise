@@ -1,6 +1,5 @@
 
 
-
 /* testing range */
 /* ========== ROOT VARIABLES ========== */
 :root {
@@ -922,6 +921,10 @@ footer ul li a:hover {
   .additional-card h2 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: center
   }
   
   .card-content {
@@ -989,3 +992,14 @@ footer ul li a:hover {
     width: 38px;
   }
 }
+/* Scale down title size on smaller screens */
+@media (max-width: 768px) { 
+  .additional-card h2 {
+    font-size: 1.25rem;
+    /* smaller for tablets */
+  } }
+@media (max-width: 576px) {
+  .additional-card h2 {
+    font-size: 1rem; 
+    /* smaller for phones */ 
+    line-height: 1.3; } }
