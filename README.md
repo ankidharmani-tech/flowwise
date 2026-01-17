@@ -27,4 +27,5 @@ HTML · CSS · JavaScript · GitHub Pages
 👩‍💻 Authors
 
 Devesh Hegde
+
 Ankita Dharmani
